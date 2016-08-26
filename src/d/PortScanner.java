@@ -3,8 +3,8 @@ package d;
 public class PortScanner {
 	
     public static void main(String[] args) {
-//    	String start_host = "40.4.0";
-    	String start_host = "123.202.0.";
+    	String start_host = "40.4.0.";
+//    	String start_host = "123.202.0.";
 //    	String end_host;
     	
     	/**

@@ -9,6 +9,8 @@ public class H implements Runnable {
 	private int port = 80;
 	private int timeOut = 3000;
 	
+	private boolean go = true;
+	
 	public H(String host)
 	{
 		this.host = host;
@@ -17,11 +19,11 @@ public class H implements Runnable {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		while(true)
+		while(go)
 		{
 			if(scan(host, port, timeOut))
 			{
-	            System.out.println(host + ":" + 81);
+	            System.out.println(host + ":" + 80);
 	        }
 			else
 			{
@@ -59,15 +61,16 @@ public class H implements Runnable {
 		temp[2] = String.valueOf(temp_c);
 		if(temp_c==256)
 		{
-			try
-			{
-				throw new Exception("Out of range");
-			}
-			catch(Exception e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			go = false;
+//			try
+//			{
+//				throw new Exception("Out of range");
+//			}
+//			catch(Exception e)
+//			{
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 		}
 		
     	String r = "";
